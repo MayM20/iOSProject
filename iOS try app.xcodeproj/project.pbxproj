@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D8B2DE520AD251900D8E063 /* StartChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B2DE420AD251900D8E063 /* StartChallenge.m */; };
+		8D8B2DE920AD36CE00D8E063 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 8D8B2DE820AD36CE00D8E063 /* Resources */; };
+		A473AA0D20ACF06A0063AC23 /* GUI in Resources */ = {isa = PBXBuildFile; fileRef = A473AA0C20ACF06A0063AC23 /* GUI */; };
 		A4E79393209ADCEE000C17C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E79392209ADCEE000C17C1 /* AppDelegate.m */; };
 		A4E79396209ADCEE000C17C1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E79395209ADCEE000C17C1 /* ViewController.m */; };
 		A4E79399209ADCEE000C17C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E79397209ADCEE000C17C1 /* Main.storyboard */; };
@@ -35,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D8B2DE320AD251900D8E063 /* StartChallenge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartChallenge.h; sourceTree = "<group>"; };
+		8D8B2DE420AD251900D8E063 /* StartChallenge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartChallenge.m; sourceTree = "<group>"; };
+		8D8B2DE820AD36CE00D8E063 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Resources; path = ../../../../Desktop/Resources; sourceTree = "<group>"; };
+		A473AA0C20ACF06A0063AC23 /* GUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GUI; sourceTree = "<group>"; };
 		A4E7938E209ADCEE000C17C1 /* iOS try app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS try app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E79391209ADCEE000C17C1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A4E79392209ADCEE000C17C1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -106,10 +113,14 @@
 				A4E79394209ADCEE000C17C1 /* ViewController.h */,
 				A4E79395209ADCEE000C17C1 /* ViewController.m */,
 				A4E79397209ADCEE000C17C1 /* Main.storyboard */,
+				8D8B2DE820AD36CE00D8E063 /* Resources */,
+				A473AA0C20ACF06A0063AC23 /* GUI */,
 				A4E7939A209ADCEE000C17C1 /* Assets.xcassets */,
 				A4E7939C209ADCEE000C17C1 /* LaunchScreen.storyboard */,
 				A4E7939F209ADCEE000C17C1 /* Info.plist */,
 				A4E793A0209ADCEE000C17C1 /* main.m */,
+				8D8B2DE320AD251900D8E063 /* StartChallenge.h */,
+				8D8B2DE420AD251900D8E063 /* StartChallenge.m */,
 			);
 			path = "iOS try app";
 			sourceTree = "<group>";
@@ -241,6 +252,8 @@
 				A4E7939E209ADCEE000C17C1 /* LaunchScreen.storyboard in Resources */,
 				A4E7939B209ADCEE000C17C1 /* Assets.xcassets in Resources */,
 				A4E79399209ADCEE000C17C1 /* Main.storyboard in Resources */,
+				A473AA0D20ACF06A0063AC23 /* GUI in Resources */,
+				8D8B2DE920AD36CE00D8E063 /* Resources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D8B2DE520AD251900D8E063 /* StartChallenge.m in Sources */,
 				A4E79396209ADCEE000C17C1 /* ViewController.m in Sources */,
 				A4E793A1209ADCEE000C17C1 /* main.m in Sources */,
 				A4E79393209ADCEE000C17C1 /* AppDelegate.m in Sources */,

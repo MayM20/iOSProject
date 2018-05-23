@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D78847C20B2E85800211135 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D78847B20B2E85800211135 /* MenuViewController.m */; };
 		8D8B2DE520AD251900D8E063 /* StartChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B2DE420AD251900D8E063 /* StartChallenge.m */; };
 		A473AA0D20ACF06A0063AC23 /* GUI in Resources */ = {isa = PBXBuildFile; fileRef = A473AA0C20ACF06A0063AC23 /* GUI */; };
 		A4E79393209ADCEE000C17C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E79392209ADCEE000C17C1 /* AppDelegate.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8D78847A20B2E85800211135 /* MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		8D78847B20B2E85800211135 /* MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		8D8B2DE320AD251900D8E063 /* StartChallenge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartChallenge.h; sourceTree = "<group>"; };
 		8D8B2DE420AD251900D8E063 /* StartChallenge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartChallenge.m; sourceTree = "<group>"; };
 		A473AA0C20ACF06A0063AC23 /* GUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GUI; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				A4E79394209ADCEE000C17C1 /* ViewController.h */,
 				A4E79395209ADCEE000C17C1 /* ViewController.m */,
 				A4E79397209ADCEE000C17C1 /* Main.storyboard */,
+				8D78847A20B2E85800211135 /* MenuViewController.h */,
+				8D78847B20B2E85800211135 /* MenuViewController.m */,
 				A473AA0C20ACF06A0063AC23 /* GUI */,
 				A4E7939A209ADCEE000C17C1 /* Assets.xcassets */,
 				A4E7939C209ADCEE000C17C1 /* LaunchScreen.storyboard */,
@@ -278,6 +283,7 @@
 				A4E79396209ADCEE000C17C1 /* ViewController.m in Sources */,
 				A4E793A1209ADCEE000C17C1 /* main.m in Sources */,
 				A4E79393209ADCEE000C17C1 /* AppDelegate.m in Sources */,
+				8D78847C20B2E85800211135 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

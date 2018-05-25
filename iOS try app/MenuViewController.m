@@ -18,6 +18,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+/*-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString: @"toGameSegue"])
+    {
+        UIViewController* thisGameViewCrtl = [segue destinationViewController];
+        
+        if(sender == _catButton)
+            thisGameViewCrtl.gameMode = @"cute";
+    }
+}*/
 
 -(IBAction)gotoGameAction:(id)sender
 {

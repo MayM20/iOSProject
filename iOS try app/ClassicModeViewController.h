@@ -11,6 +11,8 @@
 @interface ClassicModeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *gameView;
 @property (weak, nonatomic) IBOutlet UIImageView *sampleImgView;
+
+//@property (weak, nonatomic) NSString* gameMode;
 - (IBAction)backAction:(id)sender;
 
 @end

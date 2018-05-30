@@ -14,6 +14,7 @@
 		8D78848D20BAD12500211135 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D78848A20BAD12400211135 /* GoogleService-Info.plist */; };
 		8D78849020BBBCBA00211135 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D78848F20BBBCBA00211135 /* RegisterViewController.m */; };
 		8D8B2DE520AD251900D8E063 /* StartChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B2DE420AD251900D8E063 /* StartChallenge.m */; };
+		8DEE4C5D20BE6A9D0023AF08 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE4C5C20BE6A9D0023AF08 /* AlertViewController.m */; };
 		95A523078ADD1E91901AAA5C /* libPods-iOS try appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2DF888119DBE4725358FB8 /* libPods-iOS try appTests.a */; };
 		A442EB6020B62B5E00B160D7 /* ClassicModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A442EB5F20B62B5E00B160D7 /* ClassicModeViewController.m */; };
 		A473AA0D20ACF06A0063AC23 /* GUI in Resources */ = {isa = PBXBuildFile; fileRef = A473AA0C20ACF06A0063AC23 /* GUI */; };
@@ -58,6 +59,8 @@
 		8D78848F20BBBCBA00211135 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		8D8B2DE320AD251900D8E063 /* StartChallenge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartChallenge.h; sourceTree = "<group>"; };
 		8D8B2DE420AD251900D8E063 /* StartChallenge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartChallenge.m; sourceTree = "<group>"; };
+		8DEE4C5B20BE6A9D0023AF08 /* AlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
+		8DEE4C5C20BE6A9D0023AF08 /* AlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
 		A442EB5E20B62B5E00B160D7 /* ClassicModeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassicModeViewController.h; sourceTree = "<group>"; };
 		A442EB5F20B62B5E00B160D7 /* ClassicModeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassicModeViewController.m; sourceTree = "<group>"; };
 		A473AA0C20ACF06A0063AC23 /* GUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GUI; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 		8D78849120BBCAA800211135 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
+				8DEE4C5B20BE6A9D0023AF08 /* AlertViewController.h */,
+				8DEE4C5C20BE6A9D0023AF08 /* AlertViewController.m */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				8D78849020BBBCBA00211135 /* RegisterViewController.m in Sources */,
 				A4E79393209ADCEE000C17C1 /* AppDelegate.m in Sources */,
 				8D78847C20B2E85800211135 /* MenuViewController.m in Sources */,
+				8DEE4C5D20BE6A9D0023AF08 /* AlertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

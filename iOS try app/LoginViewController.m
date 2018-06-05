@@ -45,10 +45,9 @@
            
            //start the login process
             
-            [[FIRAuth auth]
-             signInWithEmail:usernameTextField.text
-             password:passwordTextField.text
-             completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
+            [[FIRAuth auth] signInWithEmail:usernameTextField.text
+                                    password:passwordTextField.text
+                                    completion:^(FIRAuthDataResult * _Nullable authResult, NSError * _Nullable error) {
                  
             
                  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)),

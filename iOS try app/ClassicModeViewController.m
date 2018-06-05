@@ -99,6 +99,12 @@
             
             //whatever integer value its, needs to have 2 digits
             NSString* imgName = [NSString stringWithFormat:@"cute_%02d.jpg", imgNum];
+            
+            //this is the code that i need to make for my container image view to change
+            //however, because AttackMode is inheriting that screen is being affected.
+            
+            //NSString* imgName = [NSString stringWithFormat:@"%@_%02d.jpg", _gameMode, imgNum];
+            
             block.image = [UIImage imageNamed: imgName];
             block.center = newCen;
             [_gameView addSubview:block];

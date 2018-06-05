@@ -29,6 +29,12 @@
         
         if(sender == _catButton)
             thisGameViewCtrl.gameMode = @"cute";
+        if(sender == _dogsButton)
+            thisGameViewCtrl.gameMode =  @"dogs";
+        if(sender == _flowerButton)
+            thisGameViewCtrl.gameMode = @"flower";
+        if (sender == _labsButton)
+            thisGameViewCtrl.gameMode = @"labs";
     }
 }
 

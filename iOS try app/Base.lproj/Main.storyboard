@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8sF-9o-0Lk">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -354,11 +354,12 @@
                         <outlet property="emailTextField" destination="kFD-ME-2tp" id="Bky-vH-Cu4"/>
                         <outlet property="passwordTextField" destination="vuB-jO-irt" id="jL2-5B-LmY"/>
                         <outlet property="usernameTextField" destination="bPN-cT-6si" id="v0C-Rs-8hx"/>
+                        <segue destination="6pS-GB-fjK" kind="show" identifier="goToMainMenuSegue" id="acL-9l-5tG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vkf-W0-VOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-69.375" y="-158.45070422535213"/>
+            <point key="canvasLocation" x="-133" y="-181"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7e7-TU-Zgd">
@@ -457,7 +458,7 @@
                                     <constraint firstAttribute="height" constant="54" id="qsw-va-ooG"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cuteSample" translatesAutoresizingMaskIntoConstraints="NO" id="Rgp-g4-xF6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rgp-g4-xF6">
                                 <rect key="frame" x="30" y="345" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Rgp-g4-xF6" secondAttribute="height" multiplier="1:1" id="BbX-n5-Sa0"/>
@@ -718,7 +719,7 @@
                                                 <color key="textColor" red="0.16078431369999999" green="0.49803921569999998" blue="0.72941176470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jn4-FE-uwy">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jn4-FE-uwy">
                                                 <rect key="frame" x="62" y="236" width="198" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="D3w-hX-0VF"/>
@@ -747,8 +748,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="cornerRadius" value="5"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="loginButton:" destination="1vd-Or-CwK" eventType="touchUpInside" id="32L-qo-qU0"/>
-                                                    <segue destination="6pS-GB-fjK" kind="show" identifier="login_identifier_segue" id="qS9-ub-dVa"/>
+                                                    <action selector="loginButton:" destination="1vd-Or-CwK" eventType="touchUpInside" id="Tee-qB-2hK"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="MBT-FQ-Dhs">
@@ -762,7 +762,7 @@
                                                 <rect key="frame" x="62" y="440" width="196" height="30"/>
                                                 <state key="normal" title="Not account yet? Create one"/>
                                                 <connections>
-                                                    <segue destination="DMe-0U-mbq" kind="show" identifier="notRegisterYet_identifier_segue" id="TPH-V4-HX0"/>
+                                                    <segue destination="DMe-0U-mbq" kind="show" id="W74-er-sZI"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Edf-nA-bgR">
@@ -815,12 +815,13 @@
                     <connections>
                         <outlet property="passwordTextField" destination="Edf-nA-bgR" id="kOt-U6-fs2"/>
                         <outlet property="usernameTextField" destination="jn4-FE-uwy" id="exm-ak-YzT"/>
+                        <segue destination="6pS-GB-fjK" kind="show" identifier="login_identifier_segue" id="hBY-Wn-Sdx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFe-91-J1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tRB-Th-gA7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-140.625" y="800.70422535211264"/>
+            <point key="canvasLocation" x="-454" y="1107"/>
         </scene>
         <!--Challenge Attack-->
         <scene sceneID="TEZ-VU-gVi">
@@ -948,7 +949,6 @@
     <resources>
         <image name="Logo" width="143" height="133"/>
         <image name="Reset" width="512" height="512"/>
-        <image name="cuteSample" width="768" height="768"/>
         <image name="iConCute" width="300" height="300"/>
         <image name="iConDogs" width="300" height="300"/>
         <image name="iConFlower" width="300" height="300"/>
@@ -956,6 +956,7 @@
         <image name="instructions" width="320" height="350"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="84J-ph-IZ3"/>
+        <segue reference="hBY-Wn-Sdx"/>
+        <segue reference="W74-er-sZI"/>
     </inferredMetricsTieBreakers>
 </document>

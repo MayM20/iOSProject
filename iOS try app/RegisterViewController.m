@@ -82,7 +82,7 @@
                          [dbProvider InsertUserProfileData:userModel WithUserID:userID];
                          
                          //go to home screen, insert segue identifier
-                         
+                         [self performSegueWithIdentifier:@"goToMainMenuSegue" sender:self];
                      }
                      else{
                          //error

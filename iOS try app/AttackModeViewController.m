@@ -12,6 +12,7 @@
 {
     int timeCount;
     NSTimer* gameTimer;
+    //NSString* gameView;
 }
 
 @end
@@ -42,6 +43,7 @@
     
     [super viewDidAppear:YES];
 }
+
 -(void)timerAction{
     if (timeCount > 0 )
     {
@@ -50,12 +52,32 @@
     }
     else
     {
-        
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 -(void)makeBlocksAction{
+    //int imgNum = 1;
+    
+    //NSString* imgName = [NSString stringWithFormat:@"cute_%02d.jpg", imgNum];
     [super makeBlocksAction];
 }
+
+/*
+ function that generates a random image into the container to play with
+ 
+-(IBAction)randomImage{
+    //generate random int from 1 to 5
+    int randomInt = (arc4random()% 5) +1;
+    
+    //convert int to string
+    NSString *fileName = [NSString stringWithFormat:@"file0%d.jpg", randomInt];
+    
+    //load UIImage from the filename
+    UIImage *image = [UIImage imageNamed:fileName];
+    
+    //display UIImage in UIImageView
+    [gameView setImage:image];
+}*/
 
 
 @end

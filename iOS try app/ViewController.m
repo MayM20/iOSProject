@@ -26,4 +26,7 @@
 }
 
 
+- (IBAction)settingsButton:(id)sender {
+    [self performSegueWithIdentifier:@"goToSettingsView" sender:self];
+}
 @end

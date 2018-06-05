@@ -15,6 +15,10 @@
 		8D78849020BBBCBA00211135 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D78848F20BBBCBA00211135 /* RegisterViewController.m */; };
 		8D8B2DE520AD251900D8E063 /* StartChallenge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8B2DE420AD251900D8E063 /* StartChallenge.m */; };
 		8DEE4C5D20BE6A9D0023AF08 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE4C5C20BE6A9D0023AF08 /* AlertViewController.m */; };
+		8DEE4C6020BF67470023AF08 /* UserModelClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE4C5F20BF67470023AF08 /* UserModelClass.m */; };
+		8DEE4C6320BF6A060023AF08 /* AppDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE4C6220BF6A060023AF08 /* AppDataProvider.m */; };
+		8DEE4C6620C137230023AF08 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE4C6520C137230023AF08 /* LoginViewController.m */; };
+		8DEE4C6920C253C00023AF08 /* AttackModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEE4C6820C253C00023AF08 /* AttackModeViewController.m */; };
 		95A523078ADD1E91901AAA5C /* libPods-iOS try appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2DF888119DBE4725358FB8 /* libPods-iOS try appTests.a */; };
 		A442EB6020B62B5E00B160D7 /* ClassicModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A442EB5F20B62B5E00B160D7 /* ClassicModeViewController.m */; };
 		A473AA0D20ACF06A0063AC23 /* GUI in Resources */ = {isa = PBXBuildFile; fileRef = A473AA0C20ACF06A0063AC23 /* GUI */; };
@@ -61,6 +65,14 @@
 		8D8B2DE420AD251900D8E063 /* StartChallenge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartChallenge.m; sourceTree = "<group>"; };
 		8DEE4C5B20BE6A9D0023AF08 /* AlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
 		8DEE4C5C20BE6A9D0023AF08 /* AlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
+		8DEE4C5E20BF67470023AF08 /* UserModelClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModelClass.h; sourceTree = "<group>"; };
+		8DEE4C5F20BF67470023AF08 /* UserModelClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModelClass.m; sourceTree = "<group>"; };
+		8DEE4C6120BF6A060023AF08 /* AppDataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDataProvider.h; sourceTree = "<group>"; };
+		8DEE4C6220BF6A060023AF08 /* AppDataProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDataProvider.m; sourceTree = "<group>"; };
+		8DEE4C6420C137230023AF08 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		8DEE4C6520C137230023AF08 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		8DEE4C6720C253C00023AF08 /* AttackModeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttackModeViewController.h; sourceTree = "<group>"; };
+		8DEE4C6820C253C00023AF08 /* AttackModeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AttackModeViewController.m; sourceTree = "<group>"; };
 		A442EB5E20B62B5E00B160D7 /* ClassicModeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassicModeViewController.h; sourceTree = "<group>"; };
 		A442EB5F20B62B5E00B160D7 /* ClassicModeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassicModeViewController.m; sourceTree = "<group>"; };
 		A473AA0C20ACF06A0063AC23 /* GUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GUI; sourceTree = "<group>"; };
@@ -137,15 +149,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8D78849120BBCAA800211135 /* Alerts */ = {
-			isa = PBXGroup;
-			children = (
-				8DEE4C5B20BE6A9D0023AF08 /* AlertViewController.h */,
-				8DEE4C5C20BE6A9D0023AF08 /* AlertViewController.m */,
-			);
-			path = Alerts;
-			sourceTree = "<group>";
-		};
 		A4E79385209ADCEE000C17C1 = {
 			isa = PBXGroup;
 			children = (
@@ -171,14 +174,23 @@
 		A4E79390209ADCEE000C17C1 /* iOS try app */ = {
 			isa = PBXGroup;
 			children = (
-				8D78849120BBCAA800211135 /* Alerts */,
 				A4E79391209ADCEE000C17C1 /* AppDelegate.h */,
 				A4E79392209ADCEE000C17C1 /* AppDelegate.m */,
 				A4E79394209ADCEE000C17C1 /* ViewController.h */,
 				A4E79395209ADCEE000C17C1 /* ViewController.m */,
+				8DEE4C5C20BE6A9D0023AF08 /* AlertViewController.m */,
+				8DEE4C5B20BE6A9D0023AF08 /* AlertViewController.h */,
+				8DEE4C6420C137230023AF08 /* LoginViewController.h */,
+				8DEE4C6520C137230023AF08 /* LoginViewController.m */,
 				A4E79397209ADCEE000C17C1 /* Main.storyboard */,
 				8D78848E20BBBCBA00211135 /* RegisterViewController.h */,
+				8DEE4C5E20BF67470023AF08 /* UserModelClass.h */,
+				8DEE4C5F20BF67470023AF08 /* UserModelClass.m */,
+				8DEE4C6120BF6A060023AF08 /* AppDataProvider.h */,
+				8DEE4C6220BF6A060023AF08 /* AppDataProvider.m */,
 				8D78848F20BBBCBA00211135 /* RegisterViewController.m */,
+				8DEE4C6720C253C00023AF08 /* AttackModeViewController.h */,
+				8DEE4C6820C253C00023AF08 /* AttackModeViewController.m */,
 				A442EB5E20B62B5E00B160D7 /* ClassicModeViewController.h */,
 				A442EB5F20B62B5E00B160D7 /* ClassicModeViewController.m */,
 				8D78847A20B2E85800211135 /* MenuViewController.h */,
@@ -412,11 +424,15 @@
 			files = (
 				8D8B2DE520AD251900D8E063 /* StartChallenge.m in Sources */,
 				A4E79396209ADCEE000C17C1 /* ViewController.m in Sources */,
+				8DEE4C6320BF6A060023AF08 /* AppDataProvider.m in Sources */,
+				8DEE4C6020BF67470023AF08 /* UserModelClass.m in Sources */,
 				A442EB6020B62B5E00B160D7 /* ClassicModeViewController.m in Sources */,
+				8DEE4C6920C253C00023AF08 /* AttackModeViewController.m in Sources */,
 				A4E793A1209ADCEE000C17C1 /* main.m in Sources */,
 				8D78849020BBBCBA00211135 /* RegisterViewController.m in Sources */,
 				A4E79393209ADCEE000C17C1 /* AppDelegate.m in Sources */,
 				8D78847C20B2E85800211135 /* MenuViewController.m in Sources */,
+				8DEE4C6620C137230023AF08 /* LoginViewController.m in Sources */,
 				8DEE4C5D20BE6A9D0023AF08 /* AlertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

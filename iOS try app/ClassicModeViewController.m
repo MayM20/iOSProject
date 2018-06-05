@@ -20,6 +20,7 @@
     CGPoint empty;
     
     float blockWidth;
+
 }
 
 @end
@@ -37,6 +38,12 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    //NSLog(@"Game mode is %@", _gameMode);
+    
+    //make the clicked image, the correspondant/correct image sample to start puzzle
+    NSString* nameForSample = [NSString stringWithFormat:@"%@Sample.jpg", _gameMode];
+    _sampleImgView.image = [UIImage imageNamed:nameForSample];
+    
     [super viewDidAppear:YES];
     
     [_gameView layoutIfNeeded];//forces the receiver to layout its subviews inmediately
@@ -174,16 +181,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)backAction:(id)sender {
     

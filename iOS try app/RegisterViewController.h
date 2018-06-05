@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDataProvider.h"
+#import "AlertViewController.h"
 
 @import Firebase;
 
 @interface RegisterViewController : UIViewController
+
+@property (strong, nonatomic) FIRDatabaseReference *ref;
+
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;

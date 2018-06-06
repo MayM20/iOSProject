@@ -83,6 +83,8 @@
                         <viewLayoutGuide key="safeArea" id="dcj-2V-fz8"/>
                     </view>
                     <connections>
+                        <outlet property="firstNameLabel" destination="ncZ-N8-RS0" id="3jK-7s-GYZ"/>
+                        <outlet property="logoutButton" destination="G9t-G8-64Y" id="2VY-j2-PUS"/>
                         <segue destination="Mue-Wl-Dzy" kind="show" identifier="goToEntryView" id="pTc-nu-DJu"/>
                     </connections>
                 </viewController>
@@ -908,7 +910,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFe-91-J1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tRB-Th-gA7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-476" y="75"/>
+            <point key="canvasLocation" x="-476.25" y="75"/>
         </scene>
         <!--Challenge Attack-->
         <scene sceneID="TEZ-VU-gVi">
@@ -1045,7 +1047,7 @@
         <image name="user-icon" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hBY-Wn-Sdx"/>
+        <segue reference="acL-9l-5tG"/>
         <segue reference="W74-er-sZI"/>
     </inferredMetricsTieBreakers>
 </document>

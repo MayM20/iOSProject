@@ -30,6 +30,12 @@
     }
     return self;
 }
+/*-(void)displayFirstName:(UserModelClass *)user WithUserID:(NSString *)userID{
+     NSString *key = [[rootNode child:@"users/"] child:userID].key;
+    
+    NSDictionary *postFirebase
+    
+}*/
 
 -(void)InsertUserProfileData:(UserModelClass *)user WithUserID:(NSString *)userID{
     

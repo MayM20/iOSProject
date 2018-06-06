@@ -20,6 +20,8 @@ extern NSString *const inputAlertTitleConstant;
 extern NSString *const ceroInputAlertMessageConstant;
 extern NSString *const passwNotMatchingAlertMessageConstant;
 extern NSString *const updateDBAlertMessageConstant;
+extern NSString *const alertLoggedOutTitle;
+extern NSString *const alertMessageLoggedOut; 
 
 -(void)displayInputAlert: (NSString *) fieldName;
 

@@ -27,6 +27,9 @@ NSString *const passwNotMatchingAlertMessageConstant = @"Passwords did not match
 
 NSString *const updateDBAlertMessageConstant = @"Update Successfully!";
 
+NSString *const alertLoggedOutTitle= @"LOGGED OUT";
+NSString *const alertMessageLoggedOut = @"You have succesfully logged out";
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

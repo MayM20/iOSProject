@@ -32,7 +32,6 @@
 //loading user profile data to settings
 -(void)prepareData{
     
-  //displaying name for user works but not in the logged in user, only when user registers
     @try{
        
         
@@ -41,7 +40,7 @@
         
         if([FIRAuth auth].currentUser != nil){
             
-            //Get userID info from Authentication
+            //get the user id from authentication
             userID = [FIRAuth auth].currentUser.uid;
             
             [[[[[db rootNode] child:@"users"] child:userID] child:@"profile"]
@@ -51,7 +50,7 @@
                  if(snapshot != nil){
                      NSDictionary *usersDictionary = snapshot.value;
                      
-                     //Set UserModel with values
+                     //values from user model class, set
                      [user setName: [usersDictionary valueForKey:@"first_name"]];
                     
                      
@@ -95,6 +94,7 @@
         NSLog(@"You have successfully logout");
 
     [self performSegueWithIdentifier:@"goToEntryView" sender:self];
+        
     }
 }
 -(void)alertShowWithTitle:(NSString *)titleInp andBody:(NSString *)bodyInp{

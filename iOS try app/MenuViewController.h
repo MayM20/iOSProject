@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIButton *catButton;
 @property (weak, nonatomic) IBOutlet UIButton *dogsButton;
 @property (weak, nonatomic) IBOutlet UIButton *flowerButton;

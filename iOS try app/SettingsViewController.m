@@ -9,7 +9,9 @@
 #import "SettingsViewController.h"
 @import Firebase;
 
-@interface SettingsViewController ()
+@interface SettingsViewController (){
+    NSString *userID;
+}
 
 @end
 
@@ -27,29 +29,51 @@
     [super didReceiveMemoryWarning];
   
 }
-//trying to display data from one screen to the other
+//loading user profile data to settings
 -(void)prepareData{
-    /*
-    FIRDatabaseReference *rootNode= [[FIRDatabase database] referenceFromURL:[NSString stringWithFormat:@"%@/agreements",<database-url>]];
-    [rootNode observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot *snapshot)
-     {
-         if (snapshot.exists)
-         {
-             NSLog(@“%@”,snapshot.value);
-         }
-     }];*/
-    [[self.ref child:@"profile"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+    
+  //displaying name for user works but not in the logged in user, only when user registers
+    @try{
+       
         
-        NSDictionary *postFirebase = snapshot.value;
+        UserModelClass *user = [[UserModelClass alloc] init];
+        AppDataProvider *db = [[AppDataProvider alloc] init];
         
-        NSLog(@"first_name: %@", postFirebase);
+        if([FIRAuth auth].currentUser != nil){
+            
+            //Get userID info from Authentication
+            userID = [FIRAuth auth].currentUser.uid;
+            
+            [[[[[db rootNode] child:@"users"] child:userID] child:@"profile"]
+             observeSingleEventOfType:FIRDataEventTypeValue
+             withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+                 
+                 if(snapshot != nil){
+                     NSDictionary *usersDictionary = snapshot.value;
+                     
+                     //Set UserModel with values
+                     [user setName: [usersDictionary valueForKey:@"first_name"]];
+                    
+                     
+                     self.firstNameLabel.text = user.name;
+                  
+                 }
+                 
+             } withCancelBlock:^(NSError * _Nonnull error) {
+                 AlertViewController *alertError = [[AlertViewController alloc] init];
+                 [alertError displayAlertMessage: [NSString stringWithFormat:@"%@", error.localizedDescription]];
+             }];
+        }
+    }
+    @catch(NSException *ex){
+    
         
-        
-        
-    }];
+        AlertViewController *alertError = [[AlertViewController alloc] init];
+        [alertError displayAlertMessage: [NSString stringWithFormat:@"%@", [ex reason]]];
+    }
+    
 }
 -(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
     
     [self prepareData];
 }

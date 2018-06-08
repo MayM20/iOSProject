@@ -10,7 +10,7 @@
 
 @implementation AppDataProvider
 
-@synthesize rootNode, usersNode, USER_ID;
+@synthesize rootNode, usersNode, USER_ID, ref;
 
 -(id)init
 {
@@ -37,8 +37,8 @@
     
 }*/
 
+
 -(void)InsertUserProfileData:(UserModelClass *)user WithUserID:(NSString *)userID{
-    
     @try{
         //Reference Child Firebase
         NSString *key = [[rootNode child:@"users/"] child:userID].key;

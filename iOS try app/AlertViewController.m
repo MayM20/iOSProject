@@ -14,7 +14,7 @@
 
 @implementation AlertViewController
 
-//Constants for Alerts/Users/Fatima/Documents/iOSProject/iOS try app/Alerts/AlertViewController.h/Users/Fatima/Documents/iOSProject/iOS try app/Alerts/AlertViewController.m
+//Constants for Alerts/Users/Maylen/Documents/iOSProject/iOS try app/Alerts/AlertViewController.h/Users/Maylen/Documents/iOSProject/iOS try app/Alerts/AlertViewController.m
 NSString *const alertMessageConstant = @"DEFAULT..";
 NSString *const alertTitleConstant = @"PuzzleAttack";
 NSString *const alertButtonConstant = @"Ok";

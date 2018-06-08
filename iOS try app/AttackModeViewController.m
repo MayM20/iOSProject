@@ -22,16 +22,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-
 }
+/*-(void)saveScore{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:score forKey:@"highScore"];
+    [defaults synchronize];
+}*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
 }
-
-//how can i do to implement this method from the other class? of course
- //inheritance but it seems to be a problem
 -(void)viewDidAppear:(BOOL)animated{
     
     timeCount = 60;
@@ -45,6 +46,7 @@
 }
 
 -(void)timerAction{
+    
     if (timeCount > 0 )
     {
         timeCount --;
@@ -62,7 +64,7 @@
     [super makeBlocksAction];
 }
 
-/*
+/*TODO
  function that generates a random image into the container to play with
  
 -(IBAction)randomImage{

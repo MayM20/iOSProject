@@ -10,7 +10,8 @@
 
 @interface ClassicModeViewController ()
 {
-    //this allow us to divide the pieces of blocks same size in the big grey square, calculate width based on size gameView
+    //this allow us to divide the pieces of blocks same size in the big grey square,
+    //calculate width based on size gameView
     float gameViewWidth;
     
     //we are going to use this to place our blocks and centers
@@ -20,7 +21,6 @@
     CGPoint empty;
     
     float blockWidth;
-
 }
 
 @end
@@ -51,19 +51,19 @@
                              //this makes sure of load first the layout then do the calculations
     gameViewWidth = _gameView.frame.size.width;
     
+    [self makeBlocksAction];
     /*
-     #proccess involved when calling this method:
+     #proccess involved when calling makeBlocksAction method:
      
      //1-It calculates the  float value, a quarter of the width
      make a new frame for it
      //2-CGRect blockFrame -> Based on the top left corner based on height and
      width that we established before
      //3-Make a new imageView based on that new frame
-     //4-stick the image into the block
+     //4-Stick the image into the block
      //5-Added to the gameView
      
      */
-    [self makeBlocksAction];
     [self randomizeAction];
     
 }
@@ -76,7 +76,7 @@
     
     blockWidth = gameViewWidth /4;
     
-    //this is made because every screen size varies and it needs to
+    //this is made because every screen size for iOS devices varies, and it needs to
     //calculate the halfcenter y and x of the UIImageView (block) based on frame
     float xCen = blockWidth /2;
     float yCen = blockWidth /2;
@@ -93,16 +93,15 @@
             CGPoint newCen = CGPointMake(xCen, yCen);
             
             //this will generate the frame for us to hold the pieces
-            //-3 because it will generate a bit of margin of height and width between blocks
+            
+            //'-3' because it will generate a bit of margin of height and width between blocks
             CGRect blockFrame = CGRectMake(0, 0, blockWidth-3, blockWidth-3);
             UIImageView* block = [[UIImageView alloc] initWithFrame:blockFrame];
             
             //whatever integer value its, needs to have 2 digits
             NSString* imgName = [NSString stringWithFormat:@"cute_%02d.jpg", imgNum];
             
-            //this is the code that i need to make for my container image view to change
-            //however, because AttackMode is inheriting that screen is being affected.
-            
+            //CODE THAT I NEED TO USE INSTEAD
             //NSString* imgName = [NSString stringWithFormat:@"%@_%02d.jpg", _gameMode, imgNum];
             
             block.image = [UIImage imageNamed: imgName];
@@ -116,7 +115,7 @@
             xCen += blockWidth;
             imgNum = imgNum +1;
         }
-        //once the first round is made do:
+        //once the first round 'X' is made do 'Y':
         yCen = yCen + blockWidth; //bring them one step lower
         xCen = blockWidth /2; //start making the blocks from the left again
     }
@@ -161,7 +160,7 @@
     {
         NSLog(@"Tapped on one of the blocks");
         
-        //lets calculate the distance between this view's center
+        //calculate the distance between this view's center
         //and the empty center
         float xDif = touchView.center.x - empty.x;
         float yDif = touchView.center.y - empty.y;
@@ -170,7 +169,7 @@
         
         if (distance == blockWidth)
         {
-            /*NSLog(@"This image view is a neighbor of the empty");*/
+            /*test -> NSLog(@"This image view is a neighbor of the empty");*/
             
             CGPoint tempCen = touchView.center;
             
@@ -185,7 +184,7 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
 }
 
 - (IBAction)backAction:(id)sender {

@@ -18,6 +18,8 @@
 @property (strong, nonatomic) FIRDatabaseReference *usersNode;
 @property NSString *USER_ID;
 
+@property (strong, nonatomic) FIRDatabaseReference *ref;
+
 
 -(void)InsertUserProfileData: (UserModelClass *) user WithUserID:(NSString *) userID;
 

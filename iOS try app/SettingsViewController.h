@@ -16,12 +16,15 @@
 @interface SettingsViewController : UIViewController
 
 @property (strong, nonatomic) FIRDatabaseReference *ref;
-@property (strong, nonatomic) NSMutableArray *data;
+//@property (strong, nonatomic) NSMutableArray *data;
 
 @property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
+@property (weak, nonatomic) IBOutlet UILabel *bestTimeLabel;
 
 - (IBAction)logoutButton:(id)sender;
+
+//-(void)prepareData;
 
 -(void)alertShowWithTitle:(NSString *)titleInp andBody:(NSString *)bodyInp;
 

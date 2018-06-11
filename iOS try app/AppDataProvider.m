@@ -2,7 +2,7 @@
 //  AppDataProvider.m
 //  iOS try app
 //
-//  Created by Fatima Abreu on 31/5/18.
+//  Created by Maylen Medina on 31/5/18.
 //  Copyright © 2018 5526. All rights reserved.
 //
 
@@ -12,6 +12,7 @@
 
 @synthesize rootNode, usersNode, USER_ID, ref;
 
+//constructor
 -(id)init
 {
     self = [super init];
@@ -23,24 +24,18 @@
         self.usersNode = [rootNode child:@"users"];
         
         
-        //Get Current User ID
+        //getting current User ID
         if(USER_ID == nil){
             USER_ID = [FIRAuth auth].currentUser.uid;
         }
     }
     return self;
 }
-/*-(void)displayFirstName:(UserModelClass *)user WithUserID:(NSString *)userID{
-     NSString *key = [[rootNode child:@"users/"] child:userID].key;
-    
-    NSDictionary *postFirebase
-    
-}*/
 
-
+//inserting user data into firebase
 -(void)InsertUserProfileData:(UserModelClass *)user WithUserID:(NSString *)userID{
     @try{
-        //Reference Child Firebase
+    
         NSString *key = [[rootNode child:@"users/"] child:userID].key;
         
         //Obj to parse into Firebase
@@ -48,12 +43,13 @@
         @{
           @"first_name": [user name],
           @"email": [user email]
+          //@"score": [user score] TO ADD
           };
         
-        //Append User info to Obj
+        //appending user data object
         NSDictionary *childUpdate = @{[[@"/users/" stringByAppendingString:key] stringByAppendingString:@"/profile"]: postFirebase};
         
-        //Insert into DB
+        //inserting into DB
         [rootNode updateChildValues:childUpdate
                 withCompletionBlock:^(NSError * _Nullable error,
                                       FIRDatabaseReference * _Nonnull ref)

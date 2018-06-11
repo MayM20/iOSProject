@@ -2,7 +2,7 @@
 //  AttackModeViewController.m
 //  iOS try app
 //
-//  Created by Fatima Abreu on 2/6/18.
+//  Created by Maylen Medina on 2/6/18.
 //  Copyright © 2018 5526. All rights reserved.
 //
 
@@ -19,37 +19,30 @@
 
 @implementation AttackModeViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-  
-}
 /*-(void)saveScore{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:score forKey:@"highScore"];
     [defaults synchronize];
 }*/
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    
-}
+
 -(void)viewDidAppear:(BOOL)animated{
-    
-    timeCount = 60;
-    gameTimer = [NSTimer scheduledTimerWithTimeInterval:1
-                                        target:self
-                                      selector:@selector(timerAction)
-                                      userInfo:nil
-                                       repeats:YES];
-    
+ 
     [super viewDidAppear:YES];
+    
+    timeCount = 0;
+    gameTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                 target:self
+                                               selector:@selector(timerAction)
+                                               userInfo:nil
+                                                repeats:YES];
 }
 
 -(void)timerAction{
     
-    if (timeCount > 0 )
+    if (timeCount < 10 )
     {
-        timeCount --;
+        timeCount++;
         _timer.text = [NSString stringWithFormat:@"%d\"", timeCount];
     }
     else
@@ -57,29 +50,19 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
--(void)makeBlocksAction{
-    //int imgNum = 1;
-    
-    //NSString* imgName = [NSString stringWithFormat:@"cute_%02d.jpg", imgNum];
-    [super makeBlocksAction];
-}
 
-/*TODO
- function that generates a random image into the container to play with
- 
--(IBAction)randomImage{
-    //generate random int from 1 to 5
-    int randomInt = (arc4random()% 5) +1;
-    
-    //convert int to string
-    NSString *fileName = [NSString stringWithFormat:@"file0%d.jpg", randomInt];
-    
-    //load UIImage from the filename
-    UIImage *image = [UIImage imageNamed:fileName];
-    
-    //display UIImage in UIImageView
-    [gameView setImage:image];
-}*/
+-(void)donePlaying{
+    /*
+     two ways might be?
+     if ([blocksArray containsObject: != NSNotFound]){
+     
+     }
+    if ([blocksArray containsObject: @"%@_%2d.jpg"]) // YES
+    {
+        // display alert 'congrats'
+        // save time playing
+    }*/
+}
 
 
 @end

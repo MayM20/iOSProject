@@ -2,7 +2,7 @@
 //  AttackModeViewController.h
 //  iOS try app
 //
-//  Created by Fatima Abreu on 2/6/18.
+//  Created by Maylen Medina on 2/6/18.
 //  Copyright © 2018 5526. All rights reserved.
 //
 
@@ -13,6 +13,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *timer;
+
 
 -(void)timerAction;
 

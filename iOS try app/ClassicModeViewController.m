@@ -7,25 +7,28 @@
 //
 
 #import "ClassicModeViewController.h"
+#import "BlockModel.h"
 
 @interface ClassicModeViewController ()
 {
     //this allow us to divide the pieces of blocks same size in the big grey square,
     //calculate width based on size gameView
-    float gameViewWidth;
-    
+    //float gameViewWidth;
+   
     //we are going to use this to place our blocks and centers
-    NSMutableArray* blocksArr;
-    NSMutableArray* centersArr;
+    //NSMutableArray* blocksArr;
+    //NSMutableArray* centersArr;
     
-    CGPoint empty;
+    //CGPoint empty;
     
-    float blockWidth;
+    //float blockWidth;
 }
 
 @end
 
 @implementation ClassicModeViewController
+
+@synthesize gameView, sampleImgView, gameMode;
 
 - (void)viewDidLoad {
     /*TESTING PURPOSES
@@ -41,15 +44,15 @@
     //NSLog(@"Game mode is %@", _gameMode);
     
     //make the clicked image, the correspondant/correct image sample to start puzzle
-    NSString* nameForSample = [NSString stringWithFormat:@"%@Sample.jpg", _gameMode];
-    _sampleImgView.image = [UIImage imageNamed:nameForSample];
+    NSString* nameForSample = [NSString stringWithFormat:@"%@Sample.jpg", gameMode];
+    sampleImgView.image = [UIImage imageNamed:nameForSample];
     
     [super viewDidAppear:YES];
     
-    [_gameView layoutIfNeeded];//forces the receiver to layout its subviews inmediately
+    [gameView layoutIfNeeded];//forces the receiver to layout its subviews inmediately
                               //if required. it resizes a custom view
                              //this makes sure of load first the layout then do the calculations
-    gameViewWidth = _gameView.frame.size.width;
+    gameViewWidth = gameView.frame.size.width;
     
     [self makeBlocksAction];
     /*
@@ -82,6 +85,7 @@
     float yCen = blockWidth /2;
     
     int imgNum = 1;
+    NSUInteger index = 0;
     
     //horizontla blocks
     for (int h = 0; h < 4; h++)
@@ -94,19 +98,24 @@
             
             //this will generate the frame for us to hold the pieces
             
-            //'-3' because it will generate a bit of margin of height and width between blocks
+            //'-3' because it will generate a bit of spacing between blocks
             CGRect blockFrame = CGRectMake(0, 0, blockWidth-3, blockWidth-3);
-            UIImageView* block = [[UIImageView alloc] initWithFrame:blockFrame];
+            //UIImageView* block = [[UIImageView alloc] initWithFrame:blockFrame];
+            BlockModel* block = [[BlockModel alloc] initWithFrame:blockFrame];
             
-            //whatever integer value its, needs to have 2 digits
-            NSString* imgName = [NSString stringWithFormat:@"cute_%02d.jpg", imgNum];
+            NSLog(@"block index is: %lu", block.index);
+
+            
+            //piece of image inserted into the block
+            //NSString* imgName = [NSString stringWithFormat:@"cute_%02d.jpg", imgNum];
             
             //CODE THAT I NEED TO USE INSTEAD
-            //NSString* imgName = [NSString stringWithFormat:@"%@_%02d.jpg", _gameMode, imgNum];
+            NSString* imgName = [NSString stringWithFormat:@"%@_%02d.jpg", gameMode, imgNum];
             
             block.image = [UIImage imageNamed: imgName];
             block.center = newCen;
-            [_gameView addSubview:block];
+            block.orignalCenter = newCen;
+            [gameView addSubview:block];
             
             [blocksArr addObject: block];
             [centersArr addObject: [NSValue valueWithCGPoint:newCen]];
@@ -114,13 +123,31 @@
             //once you make one block, make the other one and so on
             xCen += blockWidth;
             imgNum = imgNum +1;
+            
+            index++;
         }
         //once the first round 'X' is made do 'Y':
         yCen = yCen + blockWidth; //bring them one step lower
         xCen = blockWidth /2; //start making the blocks from the left again
     }
     
-    NSLog(@"Centers array is: %@", centersArr);
+    //NSLog(@"Centers array is: %@", centersArr);
+    
+    
+    
+}
+-(BOOL)isGameFinished{
+    
+    
+    for(BlockModel * block in blocksArr){
+
+        if(!CGPointEqualToPoint(block.center, block.orignalCenter)){
+            return NO;
+        }
+        
+    }
+    
+    return YES;
     
 }
 
@@ -129,22 +156,31 @@
     [[blocksArr objectAtIndex:15] removeFromSuperview];
     [blocksArr removeObjectAtIndex:15];
     
+    // save originalblock here so we can use to compare later
+    //originalArr = blocksArr;
+
+    
+    
+    
     //randomise their locations
-    for(UIImageView* any in blocksArr)
+    for(BlockModel* any in blocksArr)
     {
         //making sure objects are interactable
         any.userInteractionEnabled = true;
         
         int randomIndex = arc4random() % centersArr.count;
-        any.center = [[centersArr objectAtIndex:randomIndex]CGPointValue];//convert it in CGPoint and apply to my center
-        //once you use certain location, remove it so the blocks are randomised but in good locations, then i cannot reuse it
+        any.center = [[centersArr objectAtIndex:randomIndex]CGPointValue];
+
         [centersArr removeObjectAtIndex:randomIndex];
+        
+        // USE THIS for testing. index 0 is the right corner.
+        //[centersArr removeObjectAtIndex:0];
+
     }
-    
-    /*testing purposes
+    //testing purposes
     NSLog(@"There are currently %lu elements in the center array", (unsigned long) centersArr.count);
     
-    NSLog(@"There is the empty space of: %@", [centersArr objectAtIndex:0]);*/
+    NSLog(@"There is the empty space of: %@", [centersArr objectAtIndex:0]);
     
     //one center is still in the array
     empty = [[centersArr objectAtIndex:0]CGPointValue];
@@ -154,11 +190,13 @@
 {
     UITouch* myTouch = [[touches allObjects] objectAtIndex:0];
     
+    //UIView* touchView = myTouch.view;
     UIView* touchView = myTouch.view;
+
     
     if( [blocksArr containsObject:touchView])
     {
-        NSLog(@"Tapped on one of the blocks");
+        //NSLog(@"Tapped on one of the blocks. orig: %@ curr:,  NSStringFromCGPoint(touchView.center));
         
         //calculate the distance between this view's center
         //and the empty center
@@ -181,6 +219,11 @@
             empty = tempCen;
         }
     }
+    
+    if(self.isGameFinished){
+        NSLog(@"The game has finished");
+    }
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

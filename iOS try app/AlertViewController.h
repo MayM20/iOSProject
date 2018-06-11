@@ -2,7 +2,7 @@
 //  AlertViewController.h
 //  iOS try app
 //
-//  Created by Fatima Abreu on 30/5/18.
+//  Created by Maylen Medina on 30/5/18.
 //  Copyright © 2018 5526. All rights reserved.
 //
 

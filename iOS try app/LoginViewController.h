@@ -2,7 +2,7 @@
 //  LoginViewController.h
 //  iOS try app
 //
-//  Created by Fatima Abreu on 1/6/18.
+//  Created by Maylen Medina on 1/6/18.
 //  Copyright © 2018 5526. All rights reserved.
 //
 

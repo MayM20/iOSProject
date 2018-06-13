@@ -41,9 +41,11 @@
         //Obj to parse into Firebase
         NSDictionary *postFirebase =
         @{
+          //@"first_name": [user name],
+          //@"email": [user email]
           @"first_name": [user name],
-          @"email": [user email]
-          //@"score": [user score] TO ADD
+          @"email": [user email],
+          @"score": [user score]
           };
         
         //appending user data object

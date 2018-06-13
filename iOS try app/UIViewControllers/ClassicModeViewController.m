@@ -15,13 +15,17 @@
     //calculate width based on size gameView
     //float gameViewWidth;
    
-    //we are going to use this to place our blocks and centers
+    //we are going to use this to place our blocks and coordinates
     //NSMutableArray* blocksArr;
     //NSMutableArray* centersArr;
     
     //CGPoint empty;
     
     //float blockWidth;
+    
+    // USE THIS for testing inside the randomize function. index 0 is the right corner.
+    //[centersArr removeObjectAtIndex:0];
+    //and remove the commented self.randomizeAction inside the viewDidAppear
 }
 
 @end
@@ -104,17 +108,13 @@
             BlockModel* block = [[BlockModel alloc] initWithFrame:blockFrame];
             
             NSLog(@"block index is: %lu", block.index);
-
             
             //piece of image inserted into the block
-            //NSString* imgName = [NSString stringWithFormat:@"cute_%02d.jpg", imgNum];
-            
-            //CODE THAT I NEED TO USE INSTEAD
             NSString* imgName = [NSString stringWithFormat:@"%@_%02d.jpg", gameMode, imgNum];
             
             block.image = [UIImage imageNamed: imgName];
             block.center = newCen;
-            block.orignalCenter = newCen;
+            block.originalCenter = newCen;
             [gameView addSubview:block];
             
             [blocksArr addObject: block];
@@ -141,7 +141,7 @@
     
     for(BlockModel * block in blocksArr){
 
-        if(!CGPointEqualToPoint(block.center, block.orignalCenter)){
+        if(!CGPointEqualToPoint(block.center, block.originalCenter)){
             return NO;
         }
         

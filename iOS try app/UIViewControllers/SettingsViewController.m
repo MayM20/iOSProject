@@ -17,7 +17,7 @@
 
 @implementation SettingsViewController
 
-@synthesize firstNameLabel, ref;
+@synthesize firstNameLabel, bestTimeLabel, ref;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,9 +52,10 @@
                      
                      //values from user model class, set
                      [user setName: [usersDictionary valueForKey:@"first_name"]];
-                    
+                     [user setScore: [usersDictionary valueForKey:@"score"]];
                      
                      self.firstNameLabel.text = user.name;
+                     self.bestTimeLabel.text = user.score;
                   
                  }
                  

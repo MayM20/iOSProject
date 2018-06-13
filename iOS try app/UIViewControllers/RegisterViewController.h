@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDataProvider.h"
-#import "AlertViewController.h"
+#import "../Providers/AppDataProvider.h"
+#import "../Alerts/AlertViewController.h"
 
 @import Firebase;
 

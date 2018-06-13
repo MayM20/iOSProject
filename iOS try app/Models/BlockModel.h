@@ -11,6 +11,6 @@
 @interface BlockModel : UIImageView
 
 @property (nonatomic, assign) NSUInteger index;
-@property (nonatomic, assign) CGPoint orignalCenter;
+@property (nonatomic, assign) CGPoint originalCenter;
 
 @end

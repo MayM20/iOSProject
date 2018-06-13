@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AlertViewController.h"
+#import "../Alerts/AlertViewController.h"
 
 @interface LoginViewController : UIViewController
 

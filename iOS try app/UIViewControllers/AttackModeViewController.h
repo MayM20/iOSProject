@@ -8,14 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import "ClassicModeViewController.h"
+#import "../Models/BlockModel.h"
+#import "SettingsViewController.h"
+
+@import Firebase;
 
 @interface AttackModeViewController : ClassicModeViewController 
 
 
 @property (weak, nonatomic) IBOutlet UILabel *timer;
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 
 
 -(void)timerAction;
+//-(BOOL)isGameFinished;
 
 
 

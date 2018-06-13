@@ -12,15 +12,17 @@
 // read and write from disk
 // nscoding
 
-@synthesize name, email, uid;
+@synthesize name, email, uid, score;
 
 -(id) initWith:(NSString *)input_Name
       andEmail:(NSString *)input_Email
         andUid:(NSString *)input_UID
+      andScore:(NSString *)gameScore
 {
     name = input_Name;
     email = input_Email;
     uid = input_UID;
+    score= gameScore;
     
     return self;
 }
@@ -37,8 +39,9 @@
     NSString* thisName = [aDecoder decodeObjectForKey:@"nameKey"];
     NSString* thisEmail = [aDecoder decodeObjectForKey:@"emailKey"];
     NSString* thisUid = [aDecoder decodeObjectForKey:@"uidKey"];
+    NSString* thisScore = [aDecoder decodeObjectForKey:@"scoreKey"];
     
-    return [self initWith:thisName andEmail:thisEmail andUid:thisUid];
+    return [self initWith:thisName andEmail:thisEmail andUid:thisUid andScore:thisScore];
 }
 
 @end

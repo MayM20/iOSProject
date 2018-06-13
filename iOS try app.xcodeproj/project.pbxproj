@@ -163,6 +163,45 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A4D2338720D10C70001CE7E4 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				8DEE4C6120BF6A060023AF08 /* AppDataProvider.h */,
+				8DEE4C6220BF6A060023AF08 /* AppDataProvider.m */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		A4D2338820D10C98001CE7E4 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				8DEE4C5C20BE6A9D0023AF08 /* AlertViewController.m */,
+				8DEE4C5B20BE6A9D0023AF08 /* AlertViewController.h */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		A4D2338920D10CDE001CE7E4 /* UIViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A4E79394209ADCEE000C17C1 /* ViewController.h */,
+				A4E79395209ADCEE000C17C1 /* ViewController.m */,
+				8DEE4C6420C137230023AF08 /* LoginViewController.h */,
+				8DEE4C6520C137230023AF08 /* LoginViewController.m */,
+				8DEE4C8020C6658B0023AF08 /* SettingsViewController.h */,
+				8DEE4C8120C6658B0023AF08 /* SettingsViewController.m */,
+				8D78848E20BBBCBA00211135 /* RegisterViewController.h */,
+				8D78848F20BBBCBA00211135 /* RegisterViewController.m */,
+				8DEE4C6720C253C00023AF08 /* AttackModeViewController.h */,
+				8DEE4C6820C253C00023AF08 /* AttackModeViewController.m */,
+				A442EB5E20B62B5E00B160D7 /* ClassicModeViewController.h */,
+				A442EB5F20B62B5E00B160D7 /* ClassicModeViewController.m */,
+				8D78847A20B2E85800211135 /* MenuViewController.h */,
+				8D78847B20B2E85800211135 /* MenuViewController.m */,
+			);
+			path = UIViewControllers;
+			sourceTree = "<group>";
+		};
 		A4E79385209ADCEE000C17C1 = {
 			isa = PBXGroup;
 			children = (
@@ -190,26 +229,11 @@
 			children = (
 				A4E79391209ADCEE000C17C1 /* AppDelegate.h */,
 				A4E79392209ADCEE000C17C1 /* AppDelegate.m */,
-				A4E79394209ADCEE000C17C1 /* ViewController.h */,
-				A4E79395209ADCEE000C17C1 /* ViewController.m */,
-				8DEE4C5C20BE6A9D0023AF08 /* AlertViewController.m */,
-				8DEE4C5B20BE6A9D0023AF08 /* AlertViewController.h */,
-				8DEE4C6420C137230023AF08 /* LoginViewController.h */,
-				8DEE4C6520C137230023AF08 /* LoginViewController.m */,
+				A4D2338920D10CDE001CE7E4 /* UIViewControllers */,
+				A4D2338820D10C98001CE7E4 /* Alerts */,
 				A4E79397209ADCEE000C17C1 /* Main.storyboard */,
-				8DEE4C6120BF6A060023AF08 /* AppDataProvider.h */,
-				8DEE4C6220BF6A060023AF08 /* AppDataProvider.m */,
-				8DEE4C8020C6658B0023AF08 /* SettingsViewController.h */,
-				8DEE4C8120C6658B0023AF08 /* SettingsViewController.m */,
-				8D78848E20BBBCBA00211135 /* RegisterViewController.h */,
-				8D78848F20BBBCBA00211135 /* RegisterViewController.m */,
+				A4D2338720D10C70001CE7E4 /* Providers */,
 				8DEE4C8A20CE6F390023AF08 /* Models */,
-				8DEE4C6720C253C00023AF08 /* AttackModeViewController.h */,
-				8DEE4C6820C253C00023AF08 /* AttackModeViewController.m */,
-				A442EB5E20B62B5E00B160D7 /* ClassicModeViewController.h */,
-				A442EB5F20B62B5E00B160D7 /* ClassicModeViewController.m */,
-				8D78847A20B2E85800211135 /* MenuViewController.h */,
-				8D78847B20B2E85800211135 /* MenuViewController.m */,
 				A473AA0C20ACF06A0063AC23 /* GUI */,
 				A4E7939A209ADCEE000C17C1 /* Assets.xcassets */,
 				A4E7939C209ADCEE000C17C1 /* LaunchScreen.storyboard */,

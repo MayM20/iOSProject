@@ -8,42 +8,59 @@
 
 #import "AttackModeViewController.h"
 
+
 @interface AttackModeViewController ()
 {
     int timeCount;
     NSTimer* gameTimer;
-    //NSString* gameView;
+    NSString *userID;
+
+    
+    int currentTime;
 }
 
 @end
 
 @implementation AttackModeViewController
 
-/*-(void)saveScore{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:score forKey:@"highScore"];
-    [defaults synchronize];
-}*/
+@synthesize ref;
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.ref = [[FIRDatabase database] reference];
+}
 
 -(void)viewDidAppear:(BOOL)animated{
  
     [super viewDidAppear:YES];
     
     timeCount = 0;
+    currentTime = 0;
     gameTimer = [NSTimer scheduledTimerWithTimeInterval:1
                                                  target:self
                                                selector:@selector(timerAction)
                                                userInfo:nil
                                                 repeats:YES];
+    
 }
 
 -(void)timerAction{
     
-    if (timeCount < 10 )
+    if (timeCount < 100 )
     {
         timeCount++;
         _timer.text = [NSString stringWithFormat:@"%d\"", timeCount];
+
+        //once game is finished, save time
+        if(self.isGameFinished == true){
+            
+            //bool cz = self.isGameFinished;
+            //NSLog(@"not completed yet");
+            //NSLog(@" %d: ",(int)cz );
+            
+        
+        }
     }
     else
     {
@@ -51,18 +68,6 @@
     }
 }
 
--(void)donePlaying{
-    /*
-     two ways might be?
-     if ([blocksArray containsObject: != NSNotFound]){
-     
-     }
-    if ([blocksArray containsObject: @"%@_%2d.jpg"]) // YES
-    {
-        // display alert 'congrats'
-        // save time playing
-    }*/
-}
 
 
 @end

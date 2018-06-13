@@ -34,6 +34,6 @@
 -(void)makeBlocksAction;
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event;
 -(void)viewDidAppear:(BOOL)animated;
-//-(BOOL)isGameFinished;
+-(BOOL)isGameFinished;
 
 @end

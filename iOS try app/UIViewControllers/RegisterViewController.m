@@ -25,20 +25,6 @@
     self.ref = [[FIRDatabase database] reference];
 }
 
-/*
--(void)firebaseTests
-{
-    
-    [FIRAuth.auth createUserWithEmail:@"maylen@test.com"
-                             password:@"1234"
-                           completion:^(FIRAuthDataResult * _Nullable user, NSError * _Nullable error)
-                                        {
-                                            if(error == nil)
-                                                [self alertShowWithTitle:@"Success"
-                                                                 andBody:@"You have succesfully made a new user"];
-                           }];
-}*/
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -59,10 +45,14 @@
                 NSString *userEmail = emailTextField.text;
                 NSString *userPassword = confirmPasswordTextField.text;
                 
+                NSString *userScore = @"123";
+               // NSString *userScore = @"";
+                
                 //generate userobject
                 UserModelClass *userModel = [[UserModelClass alloc] init];
                 userModel.name = userName;
                 userModel.email= userEmail;
+                userModel.score = userScore;
                 
                 [[FIRAuth auth]
                  createUserWithEmail:userEmail

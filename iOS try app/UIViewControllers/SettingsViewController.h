@@ -7,16 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AlertViewController.h"
-#import "AppDataProvider.h"
-#import "UserModelClass.h"
+#import "../Alerts/AlertViewController.h"
+#import "../Providers/AppDataProvider.h"
+#import "../Models/UserModelClass.h"
 
 @import Firebase;
 
 @interface SettingsViewController : UIViewController
 
 @property (strong, nonatomic) FIRDatabaseReference *ref;
-//@property (strong, nonatomic) NSMutableArray *data;
 
 @property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;

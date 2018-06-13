@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UserModelClass.h"
-#import "AlertViewController.h"
+#import "../Models/UserModelClass.h"
+#import "../Alerts/AlertViewController.h"
 
 @import Firebase;
 

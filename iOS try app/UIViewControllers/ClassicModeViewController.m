@@ -190,7 +190,6 @@
 {
     UITouch* myTouch = [[touches allObjects] objectAtIndex:0];
     
-    //UIView* touchView = myTouch.view;
     UIView* touchView = myTouch.view;
 
     
@@ -218,10 +217,6 @@
             
             empty = tempCen;
         }
-    }
-    
-    if(self.isGameFinished){
-        NSLog(@"The game has finished");
     }
     
 }

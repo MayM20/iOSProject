@@ -21,6 +21,7 @@
 
 
 -(void)timerAction;
+-(void)updateScore;
 //-(BOOL)isGameFinished;
 
 

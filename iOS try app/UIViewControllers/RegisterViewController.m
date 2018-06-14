@@ -44,7 +44,7 @@
                 NSString *userEmail = emailTextField.text;
                 NSString *userPassword = confirmPasswordTextField.text;
                 
-                NSString *userScore = @"";
+                NSString *userScore = @"999";
                // NSString *userScore = @"";
                 
                 //generate userobject

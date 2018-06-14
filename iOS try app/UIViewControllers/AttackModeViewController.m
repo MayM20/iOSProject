@@ -53,7 +53,47 @@
         _timer.text = [NSString stringWithFormat:@"%d\"", timeCount];
 
         //once game is finished, save time
-        if(self.isGameFinished == true){
+        if(self.isGameFinished == false){
+            
+            //make user model with id and score
+            UserModelClass *user = [[UserModelClass alloc] init];
+            AppDataProvider *db = [[AppDataProvider alloc] init];
+            
+            if([FIRAuth auth].currentUser != nil)
+            {
+                
+                //get the user id from authentication
+                //search firebase with key using UID
+                userID = [FIRAuth auth].currentUser.uid;
+                
+                [[[[[db rootNode] child:@"users"] child:userID] child:@"profile"]
+                 observeSingleEventOfType:FIRDataEventTypeValue
+                 withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+                     
+                     if(snapshot != nil){
+                         NSDictionary *usersDictionary = snapshot.value;
+                         
+                         //values from user model class, set score
+                         [user setScore: [usersDictionary valueForKey:@"score"]];
+                          NSLog(@"dfds: %@", user.score);//get current score
+                        
+                         
+                     }
+                     
+                 } withCancelBlock:^(NSError * _Nonnull error) {
+                     AlertViewController *alertError = [[AlertViewController alloc] init];
+                     [alertError displayAlertMessage: [NSString stringWithFormat:@"%@", error.localizedDescription]];
+                 }];
+            }
+            
+            
+            //compare score
+            if(timeCount< (int)user.score){
+                
+                //[user setScore:[usersDictionary valueForKey:@"score"]];
+            }
+            
+            //enter better score to firebase (either delete previous score or overwrite , on firebase)
             
             //bool cz = self.isGameFinished;
             //NSLog(@"not completed yet");

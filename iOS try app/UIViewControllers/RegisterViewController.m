@@ -21,13 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //[self firebaseTests];
     self.ref = [[FIRDatabase database] reference];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 - (IBAction)confirmButton:(id)sender {

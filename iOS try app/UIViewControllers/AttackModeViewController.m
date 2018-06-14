@@ -14,7 +14,6 @@
     int timeCount;
     NSTimer* gameTimer;
     NSString *userID;
-
     
     int currentTime;
 }
@@ -55,9 +54,15 @@
         //once game is finished, save time
         if(self.isGameFinished == false){
             
+            NSString *userScore = @"";
+            
             //make user model with id and score
             UserModelClass *user = [[UserModelClass alloc] init];
+            user.score = userScore;
+            //insert new score
+            
             AppDataProvider *db = [[AppDataProvider alloc] init];
+            //[db InsertUserProfileData:user Withuser:userScore];//this breaks the program
             
             if([FIRAuth auth].currentUser != nil)
             {
@@ -76,6 +81,7 @@
                          //values from user model class, set score
                          [user setScore: [usersDictionary valueForKey:@"score"]];
                           NSLog(@"dfds: %@", user.score);//get current score
+
                         
                          
                      }
@@ -87,17 +93,34 @@
             }
             
             
-            //compare score
-            if(timeCount< (int)user.score){
-                
-                //[user setScore:[usersDictionary valueForKey:@"score"]];
+            //compare score and always display the biggest one into settings user profile
+            if(timeCount < (int)user.score){
+                @try{
+                    NSLog(@"current:@%d, stored: %@", timeCount, user.score);
+
+                NSString *newTimeCountString = [NSString stringWithFormat:@"%i",timeCount];
+                user.score = newTimeCountString;
+                }
+                @catch(NSException *ex){
+                    
+                }
             }
+            else
+                NSLog(@"Do not save it");
             
             //enter better score to firebase (either delete previous score or overwrite , on firebase)
             
-            //bool cz = self.isGameFinished;
-            //NSLog(@"not completed yet");
-            //NSLog(@" %d: ",(int)cz );
+            //get USERID returned
+            NSString *userID;
+            userID = [FIRAuth auth].currentUser.uid;
+            
+            //add new score after comparing it with the previous one
+            user.score = userScore;
+            
+            //use this to check if game is finished
+            bool cz = self.isGameFinished;
+            NSLog(@"not completed yet");
+            NSLog(@" %d: ",(int)cz );
             
         
         }
@@ -107,7 +130,4 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
-
-
-
 @end

@@ -44,7 +44,7 @@
                 NSString *userEmail = emailTextField.text;
                 NSString *userPassword = confirmPasswordTextField.text;
                 
-                NSString *userScore = @"123";
+                NSString *userScore = @"";
                // NSString *userScore = @"";
                 
                 //generate userobject
@@ -63,7 +63,7 @@
                          NSString *userID;
                          userID = [FIRAuth auth].currentUser.uid;
                          
-                         //Add user email after create login
+                         //add user email after create login
                          userModel.email = userEmail;
                          
                          //insert new user profile

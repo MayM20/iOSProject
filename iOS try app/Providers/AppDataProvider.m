@@ -12,6 +12,8 @@
 
 @synthesize rootNode, usersNode, USER_ID, ref;
 
+NSString * const const_database_score = @"score";
+
 //constructor
 -(id)init
 {
@@ -69,6 +71,35 @@
     @catch(NSException *ex){
         @throw ex.reason;
     }
+}
+//insert score
+-(void)insertUserScore:(UserModelClass *)user WithUserID:(NSString *)user_id{
+        
+        //referencing the child firebase
+        NSString *key = [[usersNode child:@"profile/"]child:user_id].key;
+        
+        //parsing object into firebase
+        NSDictionary *post =
+        @{
+          //const_database_score = [user score];
+        };
+        
+        //append user info score to object
+        NSDictionary *childupdate = @{[[@"/profile/" stringByAppendingString: key] stringByAppendingString:@"/score"]: post};
+        
+        //insert into db
+        [usersNode updateChildValues:childupdate
+                 withCompletionBlock:^(NSError * _Nullable error, FIRDatabaseReference * _Nonnull ref)
+        {
+            if(error != nil){
+                NSLog(@"sorry but an error has occured");
+            }
+            else{
+                return;
+            }
+                    
+        }];
+    
 }
 
 @end

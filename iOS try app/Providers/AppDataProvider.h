@@ -14,14 +14,19 @@
 
 @interface AppDataProvider : NSObject
 
+extern NSString *const const_database_score;
+
 @property (strong, nonatomic) FIRDatabaseReference *rootNode;
 @property (strong, nonatomic) FIRDatabaseReference *usersNode;
 @property NSString *USER_ID;
+
 
 @property (strong, nonatomic) FIRDatabaseReference *ref;
 
 
 -(void)InsertUserProfileData: (UserModelClass *) user WithUserID:(NSString *) userID;
+
+-(void)insertUserScore:(UserModelClass *)user WithUserID:(NSString *) user_id;
 
 
 @end

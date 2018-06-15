@@ -18,6 +18,6 @@
 -(id) initWith:(NSString *)input_Name
       andEmail:(NSString *)input_Email
         andUid:(NSString *)input_UID
-      andScore:(NSString *)gameScore;//new
+      andScore:(NSString *)gameScore;
 
 @end

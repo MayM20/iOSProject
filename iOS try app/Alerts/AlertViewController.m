@@ -15,17 +15,16 @@
 @implementation AlertViewController
 
 //Constants for Alerts/Users/Maylen/Documents/iOSProject/iOS try app/Alerts/AlertViewController.h/Users/Maylen/Documents/iOSProject/iOS try app/Alerts/AlertViewController.m
-NSString *const alertMessageConstant = @"DEFAULT..";
+NSString *const alertMessageConstant = @"default";
 NSString *const alertTitleConstant = @"PuzzleAttack";
 NSString *const alertButtonConstant = @"Ok";
 
 
-NSString *const inputAlertMessageConstant = @"Please fill up the Information at: ";
-NSString *const inputAlertTitleConstant = @"Empty Field";
+NSString *const inputAlertMessageConstant = @"Please complete: ";
+NSString *const inputAlertTitleConstant = @"Empty field";
 NSString *const ceroInputAlertMessageConstant = @"Please fill information in all fields";
-NSString *const passwNotMatchingAlertMessageConstant = @"Passwords did not match, try again";
+NSString *const passwNotMatchingAlertMessageConstant = @"Sorry, try again, passwords not matching";
 
-NSString *const updateDBAlertMessageConstant = @"Update Successfully!";
 
 NSString *const alertLoggedOutTitle= @"LOGGED OUT";
 NSString *const alertMessageLoggedOut = @"You have succesfully logged out";
@@ -45,7 +44,7 @@ NSString *const alertMessageLoggedOut = @"You have succesfully logged out";
     return [self topViewController:[UIApplication sharedApplication].keyWindow.rootViewController];
 }
 
-//Get current view controller
+//get current view controller
 - (UIViewController *)topViewController:(UIViewController *)rootViewController {
     
     if (rootViewController.presentedViewController == nil) {
@@ -77,7 +76,6 @@ NSString *const alertMessageLoggedOut = @"You have succesfully logged out";
                                    [alert dismissViewControllerAnimated:YES completion:nil];
                                }];
     
-    //OK button added
     [alert addAction: okButton];
     
     //display alert
@@ -104,7 +102,7 @@ NSString *const alertMessageLoggedOut = @"You have succesfully logged out";
     //OK button added
     [alert addAction: okButton];
     
-    //display Alert
+    //display alert
     UIViewController *rootViewController = self.topViewController;
     [rootViewController presentViewController:alert animated:YES completion:nil];
 }

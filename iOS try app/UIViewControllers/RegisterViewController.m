@@ -22,11 +22,23 @@
     [super viewDidLoad];
     
     self.ref = [[FIRDatabase database] reference];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+-(void)dismissKeyboard {
+    [usernameTextField resignFirstResponder];
+    [emailTextField resignFirstResponder];
+    [passwordTextField resignFirstResponder];
+    [confirmPasswordTextField resignFirstResponder];
 }
 
 - (IBAction)confirmButton:(id)sender {
@@ -44,8 +56,8 @@
                 NSString *userEmail = emailTextField.text;
                 NSString *userPassword = confirmPasswordTextField.text;
                 
+                //default given value to user score
                 NSString *userScore = @"999";
-               // NSString *userScore = @"";
                 
                 //generate userobject
                 UserModelClass *userModel = [[UserModelClass alloc] init];
@@ -101,18 +113,4 @@
     }
     
 }
-
-    /*
-//alert to test firebase adding new user is working
--(void)alertShowWithTitle:(NSString *)titleInp andBody:(NSString *)bodyInp
-{
-    UIAlertController* alert;
-    alert = [UIAlertController alertControllerWithTitle:titleInp message:bodyInp preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-    
-    [self presentViewController:alert animated:true completion:nil];
-}*/
-
-
 @end

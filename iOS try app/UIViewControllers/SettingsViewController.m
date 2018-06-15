@@ -88,7 +88,9 @@
         return;
     }
     else{
-        /*UIAlertController *alert = [UIAlertController
+        //AlertViewController *successLoggedOut = [[AlertViewController alloc] init];
+        //[successLoggedOut alertLoggedOutTitle, alertMessageLoggedOut];
+       /* UIAlertController *alert = [UIAlertController
                                     alertControllerWithTitle: alertLoggedOutTitle
                                     message:alertMessageLoggedOut
                                     preferredStyle:UIAlertControllerStyleAlert];*/

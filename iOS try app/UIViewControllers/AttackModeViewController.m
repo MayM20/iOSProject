@@ -34,7 +34,7 @@
  
     [super viewDidAppear:YES];
     
-    //Prepare timer for view
+    //prepare timer for view
     timeCount = 0;
     currentTime = 0;
     gameTimer = [NSTimer scheduledTimerWithTimeInterval:1
@@ -47,23 +47,23 @@
 
 -(void)updateScore{
         
-        //Setup firebase
+        //setup firebase
         self.ref = [[FIRDatabase database] reference];
         userID = [FIRAuth auth].currentUser.uid;
         UserModelClass *user = [[UserModelClass alloc] init];
         AppDataProvider *db = [[AppDataProvider alloc] init];
     
-        // convert timecount to string so we can use to update firebase
+        //convert timecount to string so we can use to update firebase
         NSString *strTimeCount = @(timeCount).stringValue;
         
         
-        // Read current highschore
+        //read current highschore/besttime
         [[[[[db rootNode] child:@"users"] child:userID] child:@"profile"]
          observeSingleEventOfType:FIRDataEventTypeValue
          withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
              
              if(snapshot != nil){
-                 // Fetch items from database into dictionary
+                 //fetch items from database into dictionary
                  NSDictionary *usersDictionary = snapshot.value;
                  
                  NSInteger hiScore;
@@ -73,20 +73,21 @@
                  hiScore = [user.score integerValue];
                  NSLog(@"score is %@", user.score);
                  
-                 // If current score is faster than user hiscore then update with current score
+                 //if current score time is faster than user time
+                 //hiscore then update with current score time
                  if(self->timeCount < hiScore){
                      
                      NSLog(@" timecount %d, hiscore %@",
                            self->timeCount, user.score);
                      
-                     // Write high score
+                     // write high score
                      [[[[[self.ref child:@"users"] child:self->userID]child:@"profile"]child:@"score"]
                       setValue:strTimeCount];
                      
                  }
                  
              }
-             // Exceptio handling
+             //exception handling
          } withCancelBlock:^(NSError * _Nonnull error) {
              AlertViewController *alertError = [[AlertViewController alloc] init];
              [alertError displayAlertMessage: [NSString stringWithFormat:@"%@", error.localizedDescription]];
@@ -97,7 +98,7 @@
 
 -(void)timerAction{
     
-    // Maximum time limit is 120 seconds
+    //maximum time limit is 120 seconds, 2 minutes
     if (timeCount < 120 )
     {
         timeCount++;
@@ -106,7 +107,7 @@
     }
     else
     {
-        // If countdown is finish, return player to main view
+        //if countdown is finished, return player to main view
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
@@ -114,7 +115,7 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesEnded:touches withEvent:event];
     
-    // If game is finshed, update score then transition to main page
+    //if game is finshed, update score then transition to main page
     if(self.isGameFinished){
         self.updateScore;
         [self dismissViewControllerAnimated:YES completion:nil];

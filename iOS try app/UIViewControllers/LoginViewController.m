@@ -21,11 +21,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+
+-(void)dismissKeyboard {
+    
+    [usernameTextField resignFirstResponder];
+    [passwordTextField resignFirstResponder];
+ 
 }
 
 

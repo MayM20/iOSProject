@@ -23,7 +23,7 @@
 
 - (IBAction)logoutButton:(id)sender;
 
-//-(void)prepareData;
+-(void)prepareData;
 
 -(void)alertShowWithTitle:(NSString *)titleInp andBody:(NSString *)bodyInp;
 

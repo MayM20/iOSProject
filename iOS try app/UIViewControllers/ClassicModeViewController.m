@@ -9,24 +9,11 @@
 #import "ClassicModeViewController.h"
 #import "BlockModel.h"
 
-@interface ClassicModeViewController ()
-{
-    //this allow us to divide the pieces of blocks same size in the big grey square,
-    //calculate width based on size gameView
-    //float gameViewWidth;
-   
-    //we are going to use this to place our blocks and coordinates
-    //NSMutableArray* blocksArr;
-    //NSMutableArray* centersArr;
-    
-    //CGPoint empty;
-    
-    //float blockWidth;
-    
-    // USE THIS for testing inside the randomize function. index 0 is the right corner.
-    //[centersArr removeObjectAtIndex:0];
-    //and remove the commented self.randomizeAction inside the viewDidAppear
-}
+@interface ClassicModeViewController (){}
+//USE THIS for testing inside the randomize function.
+//index 0 is the right corner.
+//[centersArr removeObjectAtIndex:0];
+//and remove the commented self.randomizeAction inside the viewDidAppear
 
 @end
 
@@ -35,42 +22,41 @@
 @synthesize gameView, sampleImgView, gameMode;
 
 - (void)viewDidLoad {
-    /*TESTING PURPOSES
-     NSLog(@"\n\n VIEW DID LOAD : game view width is: %f", gameViewWidth);
-     //this shows in the command line what the width size is. 260 in this
-     case for iphone SE.
-     NSLog(@"\n\n VIEW DID APPEAR : game view width is: %f", gameViewWidth);
-     */
+   
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    //NSLog(@"Game mode is %@", _gameMode);
     
-    //make the clicked image, the correspondant/correct image sample to start puzzle
+    //make the clicked image, the correspondant/correct
+    //image sample to start puzzle
     NSString* nameForSample = [NSString stringWithFormat:@"%@Sample.jpg", gameMode];
     sampleImgView.image = [UIImage imageNamed:nameForSample];
     
     [super viewDidAppear:YES];
     
-    [gameView layoutIfNeeded];//forces the receiver to layout its subviews inmediately
-                              //if required. it resizes a custom view
-                             //this makes sure of load first the layout then do the calculations
+    //forces the receiver to layout its subviews inmediately
+    //if required. it resizes a custom view
+    //this makes sure of load first the layout then do the calculations
+    [gameView layoutIfNeeded];
+    
     gameViewWidth = gameView.frame.size.width;
     
-    [self makeBlocksAction];
+    
     /*
-     #proccess involved when calling makeBlocksAction method:
+     #proccess involved when calling 'makeBlocksAction':
      
      //1-It calculates the  float value, a quarter of the width
      make a new frame for it
-     //2-CGRect blockFrame -> Based on the top left corner based on height and
-     width that we established before
+     //2-CGRect blockFrame: based on the top left corner based on
+     height and width that we established before
      //3-Make a new imageView based on that new frame
      //4-Stick the image into the block
-     //5-Added to the gameView
+     //5-Added then to the gameView
      
      */
+    [self makeBlocksAction];
+    
     [self randomizeAction];
     
 }
@@ -83,15 +69,16 @@
     
     blockWidth = gameViewWidth /4;
     
-    //this is made because every screen size for iOS devices varies, and it needs to
-    //calculate the halfcenter y and x of the UIImageView (block) based on frame
+    //this is made because every screen size for iOS devices varies,
+    //and it needs to calculate the halfcenter y and x of the
+    //UIImageView (block) based on frame
     float xCen = blockWidth /2;
     float yCen = blockWidth /2;
     
     int imgNum = 1;
     NSUInteger index = 0;
     
-    //horizontla blocks
+    //horizontal blocks
     for (int h = 0; h < 4; h++)
     {
         
@@ -104,7 +91,7 @@
             
             //'-3' because it will generate a bit of spacing between blocks
             CGRect blockFrame = CGRectMake(0, 0, blockWidth-3, blockWidth-3);
-            //UIImageView* block = [[UIImageView alloc] initWithFrame:blockFrame];
+            
             BlockModel* block = [[BlockModel alloc] initWithFrame:blockFrame];
             
             NSLog(@"block index is: %lu", block.index);
@@ -131,13 +118,10 @@
         xCen = blockWidth /2; //start making the blocks from the left again
     }
     
-    //NSLog(@"Centers array is: %@", centersArr);
-    
-    
-    
 }
+
+//checking if game has finished
 -(BOOL)isGameFinished{
-    
     
     for(BlockModel * block in blocksArr){
 
@@ -151,6 +135,7 @@
     
 }
 
+//randomise blocks
 -(void)randomizeAction
 {
     [[blocksArr objectAtIndex:15] removeFromSuperview];
@@ -159,9 +144,6 @@
     // save originalblock here so we can use to compare later
     //originalArr = blocksArr;
 
-    
-    
-    
     //randomise their locations
     for(BlockModel* any in blocksArr)
     {
@@ -195,7 +177,7 @@
     
     if( [blocksArr containsObject:touchView])
     {
-        //NSLog(@"Tapped on one of the blocks. orig: %@ curr:,  NSStringFromCGPoint(touchView.center));
+        /*test -> NSLog(@"Tapped on one of the blocks. orig: %@ curr:,  NSStringFromCGPoint(touchView.center));*/
         
         //calculate the distance between this view's center
         //and the empty center
